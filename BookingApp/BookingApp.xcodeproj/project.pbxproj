@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		111F54AC2AA2097900565BBA /* BookingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54AB2AA2097900565BBA /* BookingAppApp.swift */; };
-		111F54AE2AA2097900565BBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54AD2AA2097900565BBA /* ContentView.swift */; };
+		111F54AE2AA2097900565BBA /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54AD2AA2097900565BBA /* HotelView.swift */; };
 		111F54B02AA2097B00565BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111F54AF2AA2097B00565BBA /* Assets.xcassets */; };
 		111F54B32AA2097B00565BBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111F54B22AA2097B00565BBA /* Preview Assets.xcassets */; };
+		111F54BD2AA20AFB00565BBA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54BC2AA20AFB00565BBA /* AppCoordinator.swift */; };
+		111F54C02AA20FDD00565BBA /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54BF2AA20FDC00565BBA /* ViewFactory.swift */; };
+		111F54C32AA2134200565BBA /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54C22AA2134200565BBA /* RoomView.swift */; };
+		111F54C72AA2138100565BBA /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54C62AA2138100565BBA /* RoomViewModel.swift */; };
+		111F54CB2AA217A800565BBA /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54CA2AA217A800565BBA /* BookingView.swift */; };
+		111F54CE2AA2190400565BBA /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F54CD2AA2190400565BBA /* OrderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		111F54A82AA2097900565BBA /* BookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111F54AB2AA2097900565BBA /* BookingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingAppApp.swift; sourceTree = "<group>"; };
-		111F54AD2AA2097900565BBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		111F54AD2AA2097900565BBA /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
 		111F54AF2AA2097B00565BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		111F54B22AA2097B00565BBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		111F54BC2AA20AFB00565BBA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		111F54BF2AA20FDC00565BBA /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		111F54C22AA2134200565BBA /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		111F54C62AA2138100565BBA /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		111F54CA2AA217A800565BBA /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		111F54CD2AA2190400565BBA /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,9 @@
 		111F54AA2AA2097900565BBA /* BookingApp */ = {
 			isa = PBXGroup;
 			children = (
+				111F54C42AA2136A00565BBA /* ViewModels */,
+				111F54BE2AA20FC900565BBA /* ViewFactory */,
+				111F54BB2AA20ADA00565BBA /* Coordinator */,
 				111F54BA2AA2099300565BBA /* Views */,
 				111F54B92AA2098C00565BBA /* App */,
 				111F54AF2AA2097B00565BBA /* Assets.xcassets */,
@@ -78,9 +93,76 @@
 		111F54BA2AA2099300565BBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				111F54AD2AA2097900565BBA /* ContentView.swift */,
+				111F54CC2AA218F300565BBA /* OrderView */,
+				111F54C92AA2179100565BBA /* BookingView */,
+				111F54C82AA2145800565BBA /* HotelView */,
+				111F54C12AA2133500565BBA /* RoomView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		111F54BB2AA20ADA00565BBA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				111F54BC2AA20AFB00565BBA /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		111F54BE2AA20FC900565BBA /* ViewFactory */ = {
+			isa = PBXGroup;
+			children = (
+				111F54BF2AA20FDC00565BBA /* ViewFactory.swift */,
+			);
+			path = ViewFactory;
+			sourceTree = "<group>";
+		};
+		111F54C12AA2133500565BBA /* RoomView */ = {
+			isa = PBXGroup;
+			children = (
+				111F54C22AA2134200565BBA /* RoomView.swift */,
+			);
+			path = RoomView;
+			sourceTree = "<group>";
+		};
+		111F54C42AA2136A00565BBA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				111F54C52AA2137200565BBA /* RoomViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		111F54C52AA2137200565BBA /* RoomViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				111F54C62AA2138100565BBA /* RoomViewModel.swift */,
+			);
+			path = RoomViewModel;
+			sourceTree = "<group>";
+		};
+		111F54C82AA2145800565BBA /* HotelView */ = {
+			isa = PBXGroup;
+			children = (
+				111F54AD2AA2097900565BBA /* HotelView.swift */,
+			);
+			path = HotelView;
+			sourceTree = "<group>";
+		};
+		111F54C92AA2179100565BBA /* BookingView */ = {
+			isa = PBXGroup;
+			children = (
+				111F54CA2AA217A800565BBA /* BookingView.swift */,
+			);
+			path = BookingView;
+			sourceTree = "<group>";
+		};
+		111F54CC2AA218F300565BBA /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				111F54CD2AA2190400565BBA /* OrderView.swift */,
+			);
+			path = OrderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				111F54AE2AA2097900565BBA /* ContentView.swift in Sources */,
+				111F54BD2AA20AFB00565BBA /* AppCoordinator.swift in Sources */,
+				111F54CE2AA2190400565BBA /* OrderView.swift in Sources */,
+				111F54C72AA2138100565BBA /* RoomViewModel.swift in Sources */,
+				111F54CB2AA217A800565BBA /* BookingView.swift in Sources */,
+				111F54AE2AA2097900565BBA /* HotelView.swift in Sources */,
+				111F54C32AA2134200565BBA /* RoomView.swift in Sources */,
 				111F54AC2AA2097900565BBA /* BookingAppApp.swift in Sources */,
+				111F54C02AA20FDD00565BBA /* ViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +409,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

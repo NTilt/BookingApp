@@ -15,6 +15,8 @@ struct ViewFactory {
     @ViewBuilder
     func getViewPage(for page: Page) -> some View {
         switch page {
+        case .hotelPage(let hotel):
+            hotelPageView(hotel: hotel)
         case .roomSelection(let hotelName):
             roomSelectionView(hotelName: hotelName)
         case .bookingPage:
@@ -22,6 +24,18 @@ struct ViewFactory {
         case .orderPage:
             orderPageView()
         }
+    }
+    
+    @ViewBuilder
+    private func hotelPageView(hotel: Hotel?) -> some View {
+        if let hotel = hotel {
+            let hotelViewModel = HotelViewModel(hotel: hotel)
+            HotelView(viewModel: hotelViewModel)
+        }
+        else {
+            EmptyView()
+        }
+        
     }
     
     @ViewBuilder

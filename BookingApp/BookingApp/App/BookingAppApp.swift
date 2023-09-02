@@ -11,17 +11,24 @@ import SwiftUI
 struct BookingAppApp: App {
     
     @StateObject var coordinator = AppCoordinator()
+    @StateObject var appViewModel = AppViewModel()
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $coordinator.path) {
-                HotelView()
-                    .preferredColorScheme(.light)
-                    .navigationDestination(for: Page.self, destination: { page in
-                        ViewFactory.shared.getViewPage(for: page)
-                    })
+            if appViewModel.hotelIsLoading {
+                ProgressView()
             }
-            .environmentObject(coordinator)
+            else {
+                NavigationStack(path: $coordinator.path) {
+                    ViewFactory.shared.getViewPage(for: .hotelPage(hotel: appViewModel.hotel))
+                        .navigationDestination(for: Page.self, destination: { page in
+                            ViewFactory.shared.getViewPage(for: page)
+                        })
+                        .preferredColorScheme(.light)
+                }
+                .environmentObject(coordinator)
+            }
+            
             
         }
     }

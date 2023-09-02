@@ -9,12 +9,15 @@ import Foundation
 import SwiftUI
 
 enum Page: Hashable, Identifiable {
+    case hotelPage(hotel: Hotel?)
     case roomSelection(hotelName: String)
     case bookingPage
     case orderPage
     
     var id: String {
         switch self {
+        case .hotelPage:
+            return "HotelPage"
         case .roomSelection:
             return "RoomSelection"
         case .bookingPage:

@@ -51,7 +51,7 @@ struct ViewFactory {
     @ViewBuilder
     private func roomSelectionView(hotelName: String) -> some View {
         let roomViewModel = RoomViewModel(hotelName: hotelName)
-        RoomView(viewModel: roomViewModel)
+        RoomsView(viewModel: roomViewModel)
     }
     
 }

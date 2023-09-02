@@ -49,8 +49,5 @@ final class HotelViewModel: ObservableObject {
         hotel.aboutTheHotel.peculiarities.forEach {
             hotelTags.append(Tag(text: $0))
         }
-        
-            
     }
-    
 }
